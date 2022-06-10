@@ -1,0 +1,16 @@
+[
+    {
+      "model": "notes.note",
+      "pk": 1,
+      "fields": {
+        "content": "note1"
+      }
+    },
+    {
+      "model": "notes.note",
+      "pk": 2,
+      "fields": {
+        "content": "note1"
+      }
+    }
+  ]
