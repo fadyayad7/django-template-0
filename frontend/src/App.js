@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
+import { Api } from "./util/Api";
 
 function App() {
+  const [notes, setNotes] = useState([]);
+
+  const getNotes = () => {
+    Api.getNotes().then(response => response.data).then(setNotes);
+  }
+
+  useEffect(() => {
+    getNotes();
+  }, []);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar bg="light" style={{ marginBottom: "20px" }}>
+        <Container>
+          <Navbar.Brand href="#">
+            Notes App
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+      <Container>
+        <TodoForm notes={notes} onChange={getNotes} />
+        <TodoList notes={notes} onChange={getNotes} />
+      </Container>
     </div>
   );
 }
