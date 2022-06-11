@@ -1,7 +1,8 @@
 # django-template-0
 
 # FRONT-END
-
+- created with create-react-app
+- added bootstrap, react-icons
 
 # BACK-END
 - install python3, pip3, pipenv
