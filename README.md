@@ -1,4 +1,5 @@
 # django-template-0
+- a full-stack app made with django/react
 
 # FRONT-END
 - created with create-react-app
