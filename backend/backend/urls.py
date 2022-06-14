@@ -19,5 +19,6 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/note/', include('notes.urls'))
+    path('api/note/', include('notes.urls')),
+    path('api/amazon/', include('amazon.urls'))
 ]

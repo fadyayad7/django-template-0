@@ -1,0 +1,29 @@
+[
+  {
+    "model": "amazon.product",
+    "pk": 1,
+    "fields": {
+      "name": "ipad air",
+      "description": "the new ipad air",
+      "price": "599.99"
+    }
+  },
+  {
+    "model": "amazon.product",
+    "pk": 2,
+    "fields": {
+      "name": "m1 macbook air",
+      "description": "the new m1 chip",
+      "price": "999.99"
+    }
+  },
+  {
+    "model": "amazon.product",
+    "pk": 3,
+    "fields": {
+      "name": "m2 macbook air",
+      "description": "the new m2 chip",
+      "price": "1299.99"
+    }
+  }
+]
