@@ -3,6 +3,14 @@ import axios from "axios"
 
 export class Api {
 
+    static AMAZON_BASE_PATH = '/api/amazon';
+
+    //Products
+    static getProducts = async () => {
+        return await axios.get(`${this.AMAZON_BASE_PATH}/product`);
+    }
+
+    // NOTES
     static getNotes = async () => {
         return await axios.get('/api/note');
     }

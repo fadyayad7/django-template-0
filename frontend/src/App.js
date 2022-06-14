@@ -4,15 +4,22 @@ import Container from "react-bootstrap/Container";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import { Api } from "./util/Api";
+import ProductsList from "./components/ProductsList";
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [products, setProducts] = useState([]);
 
   const getNotes = () => {
     Api.getNotes().then(response => response.data).then(setNotes);
   }
 
+  const getProducts = () => {
+    Api.getProducts().then(response => response.data).then(setProducts);
+  }
+
   useEffect(() => {
+    getProducts();
     getNotes();
   }, []);
 
@@ -22,13 +29,12 @@ function App() {
       <Navbar bg="light" style={{ marginBottom: "20px" }}>
         <Container>
           <Navbar.Brand href="#">
-            Notes App
+            Amazon
           </Navbar.Brand>
         </Container>
       </Navbar>
       <Container>
-        <TodoForm notes={notes} onChange={getNotes} />
-        <TodoList notes={notes} onChange={getNotes} />
+        <ProductsList products={products}/>
       </Container>
     </div>
   );
